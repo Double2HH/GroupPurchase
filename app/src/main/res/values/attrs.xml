@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Indicator">
+        <attr name="indicator_number" format="integer"/>
+        <attr name="indicator_radius" format="integer"/>
+        <attr name="indicator_forecolor" format="color"/>
+        <attr name="indicator_backcolor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout">
+        <attr name="width_space" format="dimension"/>
+        <attr name="height_space" format="dimension"/>
+    </declare-styleable>
+
+</resources>

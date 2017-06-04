@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:descendantFocusability="beforeDescendants"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/citylist_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorApplication"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/citylist_titlebar_back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/imageview_button_selector"
+            android:clickable="true"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:src="@drawable/icon_leftarrow"/>
+
+        <TextView
+            android:id="@+id/citylist_titlebar_currentcity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:lines="1"
+            android:text="当前城市-"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+    android:layout_width="0px"
+    android:layout_height="0px"
+    android:focusable="true"
+    android:focusableInTouchMode="true"/>
+
+    <www.huangheng.site.grouppurchase.other.citylist.utils.ClearEditText
+        android:id="@+id/filter_edit"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/citylist_edittext_blue"
+        android:drawableStart="@drawable/citylist_shape_rectangle_white"
+        android:gravity="center"
+        android:hint="请输入城市名称"
+        android:lines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="15.0dip"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:divider="#EEEEEE"
+            android:dividerHeight="1dp"
+            android:scrollbars="none"/>
+
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="80.0dip"
+            android:layout_height="80.0dip"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="#90000000"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="30.0dip"
+            android:visibility="invisible"/>
+
+        <www.huangheng.site.grouppurchase.other.citylist.widget.SideBar
+            android:id="@+id/sidrbar"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@color/white"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

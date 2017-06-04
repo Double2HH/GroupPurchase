@@ -1,0 +1,726 @@
+<www.huangheng.site.grouppurchase.custom.view.MySwipeRefreshLayout
+    android:id="@+id/mine_refresh"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:id="@+id/mine_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 顶部登录栏 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/mine_login_background">
+
+
+                <!-- 用户头像显示区 -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp">
+
+                    <!-- 登录后 -->
+                    <RelativeLayout
+                        android:id="@+id/mine_Login_after"
+                        android:layout_width="match_parent"
+                        android:layout_height="108dp"
+                        android:visibility="gone">
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/mine_login_after_avartar"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="36dp"
+                            fresco:placeholderImage="@drawable/icon_mine_login_avator"/>
+
+
+                        <TextView
+                            android:id="@+id/mine_login_after_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_toEndOf="@id/mine_login_after_avartar"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="lashou"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+
+                        <ImageView
+                            android:id="@+id/mine_login_after_level"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@id/mine_login_after_username"
+                            android:src="@drawable/icon_mine_login_level_0"/>
+
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="36dp"
+                            android:src="@drawable/icon_mine_login_arrow"/>
+
+
+                    </RelativeLayout>
+
+                    <!-- 登录前 -->
+                    <RelativeLayout
+                        android:id="@+id/mine_login_before"
+                        android:layout_width="match_parent"
+                        android:layout_height="108dp">
+
+                        <TextView
+                            android:id="@+id/mine_login_reminder_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="32dp"
+                            android:text="您还没有登录哦"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/mine_login_click_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/mine_login_reminder_textview"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="14dp"
+                            android:background="@drawable/mine_login_button_background"
+                            android:gravity="center"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:src="@drawable/mine_login_background"
+                            android:text="点击登录"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            />
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+                <!-- 拉手券、收藏、最近浏览-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="6dp">
+
+                    <!-- 拉手券 -->
+                    <LinearLayout
+                        android:id="@+id/mine_login_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/imageview_button_selector"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="拉手券"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/mine_login_ticket_count_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:gravity="center|top"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"/>
+
+                    <!-- 收藏 -->
+                    <LinearLayout
+                        android:id="@+id/mine_login_collect"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/imageview_button_selector"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="收藏"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/mine_login_collect_count_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"/>
+
+                    <!-- 最近浏览 -->
+                    <LinearLayout
+                        android:id="@+id/mine_login_recently"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/imageview_button_selector"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="最近浏览"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/mine_login_recently_count_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <include layout="@layout/layout_divider"/>
+
+            <!-- 我的订单 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/icon_mine_my_order"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="12dp"
+                        android:text="我的订单"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/line"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <!-- 待付款-->
+                    <RelativeLayout
+                        android:id="@+id/mine_unpaided"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/mine_unpaided_imageview"
+                            android:layout_width="32dp"
+                            android:layout_height="24dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/icon_mine_unpaided"/>
+
+                        <TextView
+                            android:id="@+id/mine_unpaided_message"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_alignEnd="@id/mine_unpaided_imageview"
+                            android:layout_alignTop="@id/mine_unpaided_imageview"
+                            android:layout_marginEnd="-7dp"
+                            android:layout_marginTop="-7dp"
+                            android:background="@drawable/icon_mine_message_amount"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/colorApplication"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@id/mine_unpaided_imageview"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="8dp"
+                            android:text="待付款"
+                            android:textSize="12sp"/>
+
+                    </RelativeLayout>
+
+                    <!-- 已付款 -->
+                    <RelativeLayout
+                        android:id="@+id/mine_paided"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/mine_paied_imageview"
+                            android:layout_width="32dp"
+                            android:layout_height="24dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/icon_mine_paied"/>
+
+                        <TextView
+                            android:id="@+id/mine_paided_message"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_alignEnd="@id/mine_paied_imageview"
+                            android:layout_alignTop="@id/mine_paied_imageview"
+                            android:layout_marginEnd="-7dp"
+                            android:layout_marginTop="-7dp"
+                            android:background="@drawable/icon_mine_message_amount"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/colorApplication"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/mine_paied_imageview"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="8dp"
+                            android:text="已付款"
+                            android:textSize="12sp"/>
+
+                    </RelativeLayout>
+
+                    <!--待评价-->
+                    <RelativeLayout
+                        android:id="@+id/mine_uncommented"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/mine_uncommented_imageview"
+                            android:layout_width="32dp"
+                            android:layout_height="24dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/icon_mine_uncommented"/>
+
+                        <TextView
+                            android:id="@+id/mine_uncommented_message"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_alignEnd="@id/mine_uncommented_imageview"
+                            android:layout_alignTop="@id/mine_uncommented_imageview"
+                            android:layout_marginEnd="-7dp"
+                            android:layout_marginTop="-7dp"
+                            android:background="@drawable/icon_mine_message_amount"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/colorApplication"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/mine_uncommented_imageview"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="8dp"
+                            android:text="待评价"
+                            android:textSize="12sp"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_divider"/>
+
+            <!-- 我的资产 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+
+                        android:src="@drawable/icon_mine_my_asset"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="12dp"
+                        android:text="我的资产"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/line"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <!-- 余额提现 -->
+                    <LinearLayout
+                        android:id="@+id/mine_asset_balance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/mine_asset_balance_count_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:paddingBottom="3dp"
+                            android:paddingTop="3dp"
+                            android:text="0元"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:paddingBottom="3dp"
+                            android:paddingTop="3dp"
+                            android:text="余额提现"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/line"/>
+
+
+                    <!-- 抵用券 -->
+                    <LinearLayout
+                        android:id="@+id/mine_asset_voucher"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/mine_asset_voucher_count_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:paddingBottom="3dp"
+                            android:paddingTop="3dp"
+                            android:text="0张"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:paddingBottom="3dp"
+                            android:paddingTop="3dp"
+                            android:text="抵用券"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_divider"/>
+
+            <!-- 评价、抽奖-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 评价 -->
+                <RelativeLayout
+                    android:id="@+id/mine_mycomment"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:background="@drawable/item_click_selector"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/mine_mycomment_imageview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/icon_mine_mycomment"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@id/mine_mycomment_imageview"
+                        android:text="我的评价"
+                        android:textSize="13sp"/>
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/icon_rightarrow"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+                <!-- 抽奖 -->
+                <RelativeLayout
+                    android:id="@+id/mine_mysurprise"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:background="@drawable/item_click_selector"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/mine_mysurprise_imageview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/icon_mine_mysurprise"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@id/mine_mysurprise_imageview"
+                        android:text="我的抽奖"
+                        android:textSize="13sp"/>
+
+                    <ImageView
+                        android:id="@+id/mine_mysurprise_rightarrow"
+                        android:layout_width="8dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/icon_rightarrow"/>
+
+                    <TextView
+                        android:id="@+id/mine_mysurprise_count_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toStartOf="@id/mine_mysurprise_rightarrow"
+                        android:text="0"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_divider"/>
+
+            <!-- 我是商家 -->
+            <RelativeLayout
+                android:id="@+id/mine_store"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/item_click_selector"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/mine_store_imageview"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/icon_mine_open_store"/>
+
+                <TextView
+                    android:id="@+id/mine_store_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/mine_store_imageview"
+                    android:text="我是商家"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/mine_store_textview"
+                    android:text="(即刻入驻提升收入)"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/icon_rightarrow"/>
+
+            </RelativeLayout>
+
+            <include layout="@layout/layout_divider"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</www.huangheng.site.grouppurchase.custom.view.MySwipeRefreshLayout>
+
+
+
+
+

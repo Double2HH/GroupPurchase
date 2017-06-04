@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 首页标题栏 -->
+    <style name="homepage_title_bar_style">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">0.0dip</item>
+        <item name="android:paddingRight">0.0dip</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48.0dip</item>
+    </style>
+
+    <!-- 附近 -->
+    <style name="Nearby_Popup_anim_style">
+        <item name="android:windowEnterAnimation">@anim/nearby_popupwindow</item>
+        <item name="android:windowExitAnimation">@anim/nearby_popupwindow</item>
+    </style>
+
+
+    <!-- 登录界面 -->
+    <style name="login_titlebar_register">
+        <item name="android:background">@drawable/imageview_button_selector</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+
+</resources>

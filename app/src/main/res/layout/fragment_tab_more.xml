@@ -1,0 +1,372 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 标题栏 -->
+    <RelativeLayout
+        android:id="@+id/more_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorApplication">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="更多"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/more_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/more_titlebar"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_divider"/>
+
+            <!-- wifi、提醒、缓存 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <!-- 仅在WIFI下显示图片 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="仅wifi下显示图片"
+                        android:textColor="@color/more_textcolor"
+                        android:textSize="16sp"/>
+
+                    <CheckBox
+                        android:id="@+id/more_wifi_switch_checkbox"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/more_switch_checkbox"
+                        android:button="@null"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="3dp"
+                    android:background="@color/line"/>
+
+                <!-- 消息提醒 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="消息提醒"
+                        android:textColor="@color/more_textcolor"
+                        android:textSize="16sp"/>
+
+                    <CheckBox
+                        android:id="@+id/more_remind_switch_checkbox"
+                        android:layout_width="48dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/more_switch_checkbox"
+                        android:button="@null"/>
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="3dp"
+                    android:background="@color/line"/>
+
+                <!-- 清除缓存 -->
+                <RelativeLayout
+                    android:id="@+id/more_clear_cache_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/more_clear_cache_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:text="0 KB"
+                        android:textColor="@color/more_textcolor_gray"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/clear_cache"
+                        android:textColor="@color/more_textcolor"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_divider"/>
+
+            <!-- 好评、反馈、客服 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <!-- 赏个好评 -->
+                <RelativeLayout
+                    android:id="@+id/more_good_comment_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector">
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/icon_rightarrow"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="赏个好评"
+                        android:textColor="@color/more_textcolor"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="3dp"
+                    android:background="@color/line"/>
+
+                <!-- 意见反馈 -->
+                <RelativeLayout
+                    android:id="@+id/more_feedback_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/icon_rightarrow"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="意见反馈"
+                        android:textColor="@color/more_textcolor"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="3dp"
+                    android:background="@color/line"/>
+
+                <!-- 联系客服 -->
+                <RelativeLayout
+                    android:id="@+id/more_service_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:text="123-4567-8900"
+                        android:textColor="@color/more_textcolor_gray"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/more_service_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="联系客服"
+                        android:textColor="@color/more_textcolor"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="3dp"
+                        android:layout_toRightOf="@id/more_service_textview"
+                        android:text="(8:00-22:00)"
+                        android:textColor="@color/more_textcolor_gray"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_divider"/>
+
+            <!-- 检查更新、关于 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_gray"
+                android:orientation="vertical">
+
+                <!-- 检查更新 -->
+                <RelativeLayout
+                    android:id="@+id/more_check_update_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/more_check_update_version_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:text="当前版本"
+                        android:textColor="@color/more_textcolor_gray"
+                        android:textSize="15.0sp"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp">
+
+                        <TextView
+                            android:id="@+id/more_check_update"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="检查更新"
+                            android:textColor="@color/more_textcolor"
+                            android:textSize="16sp"/>
+
+                        <ImageView
+                            android:id="@+id/more_check_update_hint_imageview"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5.0dip"
+                            android:layout_toEndOf="@id/more_check_update"
+                            android:background="@drawable/icon_more_check_update"
+                            android:visibility="invisible"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="3dp"
+                    android:background="@color/line"/>
+
+                <!-- 关于 -->
+                <RelativeLayout
+                    android:id="@+id/more_about_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/item_click_selector"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/icon_rightarrow"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="关于"
+                        android:textColor="@color/more_textcolor"
+                        android:textSize="16sp"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_divider"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
+
+
+
+

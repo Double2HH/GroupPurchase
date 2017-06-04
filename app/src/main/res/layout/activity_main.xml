@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!-- ViewPager容器 -->
+    <www.huangheng.site.grouppurchase.custom.view.MyViewPager
+        android:id="@+id/main_myviewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <!-- 分割线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cccccc"/>
+
+
+    <!-- 底部标签栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <!-- 主页 -->
+        <LinearLayout
+            android:id="@+id/main_tab_homepage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:padding="3dp"
+                android:src="@drawable/main_tab_homepage_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="top"
+                android:text="首页"
+                android:textColor="@drawable/main_tab_textcolor_selector"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+
+        <!-- 周边 -->
+        <LinearLayout
+            android:id="@+id/main_tab_nearby"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:padding="3dp"
+                android:src="@drawable/main_tab_nearby_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="top"
+                android:text="周边"
+                android:textColor="@drawable/main_tab_textcolor_selector"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+
+        <!-- 我的 -->
+        <LinearLayout
+            android:id="@+id/main_tab_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:padding="3dp"
+                android:src="@drawable/main_tab_mine_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="top"
+                android:text="我的"
+                android:textColor="@drawable/main_tab_textcolor_selector"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+
+        <!-- 更多 -->
+        <LinearLayout
+            android:id="@+id/main_tab_more"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="3dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/main_tab_more_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="top"
+                android:text="更多"
+                android:textColor="@drawable/main_tab_textcolor_selector"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

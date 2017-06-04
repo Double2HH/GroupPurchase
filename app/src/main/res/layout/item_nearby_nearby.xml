@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_click_selector"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/item_nearby_listview_draweeview"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="14dp"
+                android:layout_marginStart="14dp"
+                android:layerType="software"
+                android:scaleType="centerCrop"
+                fresco:placeholderImage="@drawable/icon_nearby_default_image"
+                fresco:roundedCornerRadius="8dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/item_nearby_listview_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="商品名称"
+                    android:textColor="#000000"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:id="@+id/item_nearby_listview_isgroup"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignBottom="@id/item_nearby_listview_product"
+                    android:layout_alignTop="@id/item_nearby_listview_product"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/item_nearby_listview_product"
+                    android:src="@drawable/icon_nearby_groupbuy"
+                    />
+
+                <RatingBar
+                    android:id="@+id/item_nearby_listview_score"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:isIndicator="true"
+                    android:max="5"
+                    android:numStars="5"
+                    android:rating="4.5"
+                    android:stepSize="0.1"/>
+
+                <TextView
+                    android:id="@+id/item_nearby_listview_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/item_nearby_listview_score"
+                    android:text="2人评价"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/item_nearby_listview_classify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="商品分类"
+                    android:textSize="12sp"/>
+
+
+                <TextView
+                    android:id="@+id/item_nearby_listview_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:text="距离"
+                    android:textSize="12sp"/>
+
+                <View
+                    android:id="@+id/item_nearby_listview_line"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/item_nearby_listview_distance"
+                    android:layout_alignTop="@id/item_nearby_listview_distance"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toStartOf="@id/item_nearby_listview_distance"
+                    android:background="@color/line"/>
+
+                <TextView
+                    android:id="@+id/item_nearby_listview_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/item_nearby_listview_classify"
+                    android:layout_toStartOf="@id/item_nearby_listview_line"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:lines="1"
+                    android:text="位置"
+                    android:textSize="12sp"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:background="@color/line"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+
+            <TextView
+                android:id="@+id/item_nearby_listview_price_after"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:text="¥ 2"
+                android:textColor="@color/colorApplication"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/item_nearby_listview_price_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_nearby_listview_price_after"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="2dp"
+                android:text="¥ 4"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/item_nearby_listview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/item_nearby_listview_price_after"
+                android:ellipsize="end"
+                android:text="饮品1杯，5选1，免预约"
+                android:textColor="#000000"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/item_nearby_listview_sold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="已售 29"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/item_nearby_listview_divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/layout_divider_color"/>
+
+</LinearLayout>

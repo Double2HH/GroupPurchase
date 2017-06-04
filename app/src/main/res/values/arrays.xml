@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 广告条图片 -->
+    <array name="homepage_banner_draweeviews">
+        <item>@drawable/banner_picture_1</item>
+        <item>@drawable/banner_picture_2</item>
+        <item>@drawable/banner_picture_3</item>
+        <item>@drawable/banner_picture_4</item>
+    </array>
+
+    <!-- 商品分类标签 -->
+    <array name="homepage_classify_labels">
+        <item>美食</item>
+        <item>电影</item>
+        <item>酒店</item>
+        <item>休闲娱乐</item>
+        <item>自助餐</item>
+        <item>KTV</item>
+        <item>蛋糕甜品</item>
+        <item>购物</item>
+        <item>摄影写真</item>
+        <item>丽人</item>
+        <item>生活服务</item>
+        <item>火锅</item>
+        <item>手机充值</item>
+        <item>代金券</item>
+        <item>今日新单</item>
+        <item>全部分类</item>
+    </array>
+    <!-- 商品分类图标 -->
+    <array name="homepage_classify_icons">
+        <item>@drawable/classify_food_1</item>
+        <item>@drawable/classify_movie_2</item>
+        <item>@drawable/classify_hotel_3</item>
+        <item>@drawable/classify_store_4</item>
+        <item>@drawable/classify_amusement_5</item>
+        <item>@drawable/classify_self_6</item>
+        <item>@drawable/classify_ktv_7</item>
+        <item>@drawable/classify_cake_8</item>
+        <item>@drawable/classify_travel_9</item>
+        <item>@drawable/classify_shoot_10</item>
+        <item>@drawable/classify_beautify_11</item>
+        <item>@drawable/classify_life_12</item>
+        <item>@drawable/classify_ticket_13</item>
+        <item>@drawable/classify_voucher_14</item>
+        <item>@drawable/classify_new_15</item>
+        <item>@drawable/classify_all_16</item>
+    </array>
+
+</resources>

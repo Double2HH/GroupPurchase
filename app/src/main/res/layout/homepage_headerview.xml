@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!-- 广告条 -->
+    <include layout="@layout/homepage_headerview_banner"/>
+
+    <!-- 商品分类 -->
+    <include layout="@layout/homepage_headerview_classify"/>
+
+    <!-- 头条 -->
+    <include layout="@layout/homepage_headerview_headline"/>
+
+    <!-- 分割线 -->
+    <include layout="@layout/layout_divider"/>
+
+    <!-- 广告 -->
+    <include layout="@layout/homepage_headerview_advertisement"/>
+
+    <!-- 猜你喜欢头部 -->
+    <include layout="@layout/homepage_headerview_like_header"/>
+
+</LinearLayout>

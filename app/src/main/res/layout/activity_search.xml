@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!-- 顶部标题栏 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorApplication">
+
+        <!-- 回退 -->
+        <ImageView
+            android:id="@+id/search_titlebar_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/imageview_button_selector"
+            android:clickable="true"
+            android:paddingBottom="12dp"
+            android:paddingEnd="14dp"
+            android:paddingStart="14dp"
+            android:paddingTop="12dp"
+            android:src="@drawable/icon_leftarrow"/>
+
+        <!-- 搜索按钮 -->
+        <TextView
+            android:id="@+id/search_titlebar_search_textview"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/imageview_button_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+
+        <!-- 搜索区 -->
+        <LinearLayout
+            android:id="@+id/search_titlebar_searcharea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="7dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/search_titlebar_back"
+            android:layout_toStartOf="@id/search_titlebar_search_textview"
+            android:background="@drawable/homepage_titlebar_input_background"
+            android:orientation="horizontal"
+            android:paddingBottom="6.0dp"
+            android:paddingTop="6.0dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/icon_homepage_titlebar_input_search"/>
+
+            <EditText
+                android:id="@+id/search_titlebar_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:hint="@string/homepage_titlebar_input_hint"
+                android:lines="1"
+                android:textColor="#FF666666"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- 搜索界面区 -->
+    <LinearLayout
+        android:id="@+id/search_flowandhistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 流式标签 -->
+        <www.huangheng.site.grouppurchase.custom.view.FlowLayout
+            android:id="@+id/search_flowlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="14dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            custom:height_space="10dp"
+            custom:width_space="14dp"/>
+
+        <!-- 搜索历史 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/search_history_textview"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="#E0E0E0"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:text="搜索历史"/>
+
+            <ListView
+                android:id="@+id/search_history_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search_history_textview"
+                android:divider="@color/transparent"
+                android:dividerHeight="0dp"
+                android:listSelector="@null"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- 搜索结果区 -->
+    <LinearLayout
+        android:id="@+id/search_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/item_nearby_listview_divider"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/layout_divider_color"/>
+
+        <ListView
+            android:id="@+id/search_result_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@color/layout_divider_color"
+            android:dividerHeight="0dp"
+            android:fadingEdge="none"
+            android:listSelector="#00000000"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollingCache="false"/>
+
+    </LinearLayout>
+
+</LinearLayout>
